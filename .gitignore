@@ -1,0 +1,67 @@
+#include "DEBER.h"
+void setup() {
+  
+  Serial.begin(9600);
+}
+void loop()
+{
+   Multiplicacion(); //metodos de 
+   Suma();
+   Promedio ();
+   }
+void Multiplicacion()
+{
+  Serial.println(" MULTIPLICACION");
+  Serial.println ();
+     for(int j=0;j<3;j++)
+     { 
+      long  int  m=1;
+      for(int i=0;i<20;i++)
+      {
+      m = m*matriz[i][j];
+      Serial.println (m);
+      delay (350); 
+      }
+      Serial.print ("MULTIPLICACION DE LA COLUMNA: ");
+      Serial.println (j+1) ; 
+      Serial.println (m);
+      delay (400); 
+     }
+     
+}
+void Suma ()
+{
+Serial.println("----------- SUMA-----------");
+Serial.println ();
+  for (int i=0;i<20;i++)
+  {  
+    long int l = 0;  
+    for (int j=0;j<3;j++)
+    {      
+      l= l + (matriz [i][j]);  
+      }
+      Serial.print ("SUMA DE FILA :");
+      Serial.println (i+1);
+      Serial.println (l); 
+      delay (300);
+    }
+    delay (400);      
+}
+void Promedio ()
+{
+  Serial.println("--------- PROMEDIO-----------");
+  Serial.println ();
+  long int p=0;
+  long int p1;
+  for (int j=0;j<3;j++)
+  {    
+    for (int i=0;i<20;i++)
+    {      
+      p=p+(matriz [i][j]);
+      }     
+    }
+     p1 = (p/3);
+     Serial.print ("PROMEDIO:");
+     Serial.println (p1);
+     delay (800);
+  }
